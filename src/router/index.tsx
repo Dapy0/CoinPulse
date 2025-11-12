@@ -1,0 +1,36 @@
+import { MainLayout } from "@/components/MainLayout";
+import { CoinDetailPage } from "@/pages/CoinDetailPage";
+import { MarketPage } from "@/pages/MarketPage";
+import { PortfolioPage } from "@/pages/PortfolioPAge";
+import { createRootRoute, createRoute, createRouter } from "@tanstack/react-router";
+
+const rootRoute = createRootRoute({
+  component: MainLayout,
+});
+
+const indexRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/",
+  component: MarketPage,
+});
+const portfolioRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/portfolio",
+  component: PortfolioPage,
+});
+const coinDetailRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/coin/$coinId",
+  component: CoinDetailPage,
+});
+
+const routeTree = rootRoute.addChildren([indexRoute, portfolioRoute, coinDetailRoute]);
+
+const router = createRouter({ routeTree });
+
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: typeof router;
+  }
+}
+export { router };
