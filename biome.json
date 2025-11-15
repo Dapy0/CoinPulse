@@ -9,6 +9,11 @@
     "lineWidth": 120,
     "attributePosition": "auto"
   },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": { "recommended": false },

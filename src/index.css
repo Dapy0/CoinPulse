@@ -1,3 +1,24 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  --primary: 57, 190, 247;
+  --background: 245, 245, 247;
+  --foreground: 247, 249, 250;
+}
+
+:root[class~="dark"] {
+  --primary: 56, 189, 248;
+  /* --secondary: 235, 248, 254; */
+  --background: 11, 17, 33;
+  --foreground: 17, 24, 38;
+}
+
+@theme inline {
+  --default-font-family: "Inter", sans-serif;
+  --color-primary: rgb(var(--primary));
+  /* --color-secondary: rgb(var(--color-secondary)); */
+  --color-background: rgb(var(--background));
+  --color-foreground: rgb(var(--foreground));
 }
