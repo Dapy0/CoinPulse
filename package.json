@@ -13,6 +13,7 @@
     "biom:check:write": "biome check --write ."
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.35.0",
     "@tanstack/react-router": "^1.135.2",
     "@tanstack/react-router-devtools": "^1.135.2",
     "axios": "^1.13.2",
