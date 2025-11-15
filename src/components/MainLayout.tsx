@@ -36,7 +36,7 @@ export const MainLayout = () => {
         </div>
       </aside>
 
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex-1 p-8">
         <Outlet />
       </div>
     </div>
