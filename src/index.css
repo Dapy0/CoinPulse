@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-
+*{
+  box-sizing: border-box;
+}
 :root {
   --primary: 57, 190, 247;
   --background: 245, 245, 247;

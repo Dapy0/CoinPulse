@@ -1,8 +1,9 @@
+import CoinTable from "@/components/CoinTable/CoinTable";
 import InputForm from "@/components/InputForm/InputForm";
 
 export const MarketPage = () => {
   return (
-    <div className="dark:text-white mx-auto">
+    <div className="dark:text-white mx-auto max-w-6xl">
       <header className="flex justify-between items-center">
         <div className="flex flex-col gap-1">
           <p className="text-3xl font-bold leading-tight tracking-[-0.03em]">Market Overview</p>
@@ -11,7 +12,11 @@ export const MarketPage = () => {
         <div className="w-full sm:w-auto">
           <InputForm />
         </div>
+
       </header>
+      <main className="overflow-x-auto">
+        <CoinTable />
+      </main>
     </div>
   );
 };
