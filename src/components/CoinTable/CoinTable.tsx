@@ -3,7 +3,7 @@ import type { ICoinTableItemProps } from "./types";
 
 function CoinTableItem({ index }: ICoinTableItemProps) {
   return (
-    <tr className="text-sm font-normal leading-normal text-right hover:bg-gray-200/70 dark:hover:bg-white/5 transition-colors duration-200 cursor-pointer">
+    <tr className="text-sm font-normal leading-normal text-right hover:bg-gray-200/70 dark:hover:bg-white/5 transition-colors duration-200 cursor-pointer even:bg-white/1">
       <td className="h-[68px] px-4 py-2 text-gray-500 dark:text-gray-400 text-center">{index}</td>
       <td className="h-[68px] px-4 py-2  ">
         <div className="flex gap-3 items-center text-left">

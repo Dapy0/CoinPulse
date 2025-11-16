@@ -7,9 +7,14 @@ export const CoinDetailPage = () => {
     <div className="dark:text-white mx-auto max-w-6xl flex flex-col justify-between ">
       <header className="flex justify-between items-center mb-6 gap-4 flex-wrap">
         <div className="flex gap-4 items-center">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNvq_H8N45GVkTmbD5orOE2prDz67-zj7Ho8BBqIliq4pDozE341oYay99xCrwvk0g4oN1ZGOon8i5kvNGUK153MeXQ7g43Lr97OB6O5y8efpi5bTLiMeujhemHY7qC-TCA3dEiGh5AI1UC2D93_aeOKxJsD9U8lT_unElAmbN3i_OyYt8SH4MF-eEnRdYf47slUEYRsbnAxSBeW6eVI87aTqND6vrIGbrzGooP0fmppjingbux6UUu0Qw5ugk3CSKCW4eswFuqt5m" className="aspect-square rounded-full w-12 h-12" />
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNvq_H8N45GVkTmbD5orOE2prDz67-zj7Ho8BBqIliq4pDozE341oYay99xCrwvk0g4oN1ZGOon8i5kvNGUK153MeXQ7g43Lr97OB6O5y8efpi5bTLiMeujhemHY7qC-TCA3dEiGh5AI1UC2D93_aeOKxJsD9U8lT_unElAmbN3i_OyYt8SH4MF-eEnRdYf47slUEYRsbnAxSBeW6eVI87aTqND6vrIGbrzGooP0fmppjingbux6UUu0Qw5ugk3CSKCW4eswFuqt5m"
+            className="aspect-square rounded-full w-12 h-12"
+          />
           <div className="flex flex-col">
-            <h1 className="flex gap-1 text-3xl sm:text-4xl font-black leading-tight tracking-[-0.033em]">Bitcoin<span className="uppercase text-gray-500 dark:text-gray-400">Btc</span></h1>
+            <h1 className="flex gap-1 text-3xl sm:text-4xl font-black leading-tight tracking-[-0.033em]">
+              Bitcoin<span className="uppercase text-gray-500 dark:text-gray-400">Btc</span>
+            </h1>
             <p className="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Rank #1</p>
           </div>
         </div>
@@ -31,9 +36,7 @@ export const CoinDetailPage = () => {
             <button className="px-3 py-1 rounded-md  hover:bg-white/10 uppercase">All</button>
           </div>
         </div>
-        <div className="h-100 flex items-center justify-center">
-          ..GRAPH WILL BE HERE..
-        </div>
+        <div className="h-100 flex items-center justify-center">..GRAPH WILL BE HERE..</div>
       </main>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-foreground p-6 rounded-xl border border-gray-300 dark:border-gray-600">
@@ -45,11 +48,11 @@ export const CoinDetailPage = () => {
           <p className=" text-2xl font-bold">$45.6B</p>
         </div>
         <div className="bg-foreground p-6 rounded-xl border border-gray-300 dark:border-gray-600">
-          <p className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-2">    Circulating Supply</p>
+          <p className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-2"> Circulating Supply</p>
           <p className=" text-2xl font-bold">19.7M BTC</p>
         </div>
         <div className="bg-foreground p-6 rounded-xl border border-gray-300 dark:border-gray-600">
-          <p className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-2">    Total Supply</p>
+          <p className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-2"> Total Supply</p>
           <p className=" text-2xl font-bold">21M BTC</p>
         </div>
       </div>

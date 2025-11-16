@@ -6,7 +6,6 @@ import { useSearch } from "@tanstack/react-router";
 export const MarketPage = () => {
   const { page = 1 } = useSearch({ from: "/" });
 
- 
   return (
     <div className="dark:text-white mx-auto max-w-6xl flex flex-col justify-between ">
       <header className="flex justify-between items-start mb-14 gap-4 flex-wrap">
