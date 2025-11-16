@@ -40,7 +40,7 @@ export const MainLayout = () => {
             />
             <div className="">
               <p className="text-sm font-medium ">Alexey</p>
-              <Link className=" text-xs text-gray-600 dark:text-gray-400 hover:text-primary" to={"/"}>
+              <Link className=" text-xs text-gray-600 dark:text-gray-400 hover:text-primary" to={"/"} search={{ page: 10 }}>
                 Settings
               </Link>
             </div>

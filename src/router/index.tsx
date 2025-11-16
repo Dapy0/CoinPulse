@@ -4,6 +4,9 @@ import { MarketPage } from "@/pages/MarketPage";
 import { PortfolioPage } from "@/pages/PortfolioPAge";
 import { createRootRoute, createRoute, createRouter } from "@tanstack/react-router";
 
+type CoinSearch = {
+  page: number
+}
 const rootRoute = createRootRoute({
   component: MainLayout,
 });
@@ -12,6 +15,11 @@ const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
   component: MarketPage,
+  validateSearch: (search: Record<string, unknown>): CoinSearch => {
+    return {
+      page: Number(search?.page==0? 1 : search?.page ?? 1)
+    }
+  }
 });
 const portfolioRoute = createRoute({
   getParentRoute: () => rootRoute,
