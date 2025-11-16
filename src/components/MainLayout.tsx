@@ -40,7 +40,11 @@ export const MainLayout = () => {
             />
             <div className="">
               <p className="text-sm font-medium ">Alexey</p>
-              <Link className=" text-xs text-gray-600 dark:text-gray-400 hover:text-primary" to={"/"} search={{ page: 10 }}>
+              <Link
+                className=" text-xs text-gray-600 dark:text-gray-400 hover:text-primary"
+                to={"/"}
+                search={{ page: 10 }}
+              >
                 Settings
               </Link>
             </div>
@@ -48,7 +52,7 @@ export const MainLayout = () => {
         </div>
       </aside>
 
-      <div className="flex-1 p-8">
+      <div className="flex-1 p-8 self-center">
         <Outlet />
       </div>
     </div>

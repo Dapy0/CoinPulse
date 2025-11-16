@@ -1,6 +1,4 @@
-
-
-export interface ICoinTableItemProps  {
-  index:number
+export interface ICoinTableItemProps {
+  index: number;
   // variant?: 'primary' | 'secondary'
 }
