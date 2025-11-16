@@ -1,7 +1,7 @@
 import { MainLayout } from "@/components/MainLayout";
 import { CoinDetailPage } from "@/pages/CoinDetailPage";
 import { MarketPage } from "@/pages/MarketPage";
-import { PortfolioPage } from "@/pages/PortfolioPAge";
+import { PortfolioPage } from "@/pages/PortfolioPage";
 import { createRootRoute, createRoute, createRouter } from "@tanstack/react-router";
 
 type CoinSearch = {

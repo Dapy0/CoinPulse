@@ -7,7 +7,7 @@ interface IInputForm {
 
 export default function InputForm({ value, onChange, ...props }: IInputForm) {
   return (
-    <form className="flex min-w-40 h-11 w-full max-w-sm flex-1 bg-foreground rounded-lg border border-gray-400 dark:border-gray-800">
+    <form className="flex min-w-40 min-h-11 w-full max-w-sm flex-1 bg-foreground rounded-lg border border-gray-400 dark:border-gray-800">
       <div className="text-gray-400 flex items-center justify-center px-3 ">
         <IconSearch className="size-5" />
       </div>
