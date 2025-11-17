@@ -24,3 +24,27 @@
   --color-background: rgb(var(--background));
   --color-foreground: rgb(var(--foreground));
 }
+@layer base {
+  /* Стилизация для Webkit-браузеров */
+  ::-webkit-scrollbar {
+    width: 8px; /* 'scrollbar-thin' */
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9; /* 'scrollbar-track-gray-100' */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #3b82f6; /* 'scrollbar-thumb-blue-500' */
+    border-radius: 4px; /* 'scrollbar-thumb-rounded' */
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: #1f2937; /* 'dark:scrollbar-track-gray-800' */
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--primary),40); /* 'dark:scrollbar-thumb-blue-400' */
+  }
+}

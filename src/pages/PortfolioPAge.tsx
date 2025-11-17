@@ -1,5 +1,6 @@
 import Button from "@/components/Button/Button";
 import CoinTable from "@/components/CoinTable/CoinTable";
+import CoinTableTop from "@/modules/CoinTableTop";
 
 import InputSearch from "@/modules/InputSearch/InputSearch";
 import { IconPlus } from "@tabler/icons-react";
@@ -102,7 +103,7 @@ export const PortfolioPage = () => {
           </blockquote>
         </div>
         <div className="lg:col-span-2 overflow-x-auto">
-          <CoinTable />
+          {/* <CoinTableTop /> */}
           {/* <Pagination currentPage={1} totalPages={20} search={(prev) => ({ page: prev })} /> */}
         </div>
       </main>

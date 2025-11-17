@@ -52,7 +52,7 @@ export const MainLayout = () => {
         </div>
       </aside>
 
-      <div className="flex-1 p-8 lg:self-center">
+      <div className="flex-1 p-8 flex flex-col overflow-hidden  ">
         <Outlet />
       </div>
     </div>
