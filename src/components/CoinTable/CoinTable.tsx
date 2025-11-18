@@ -38,7 +38,8 @@ function CoinTableItem({ coin, index }: ICoinTableItemProps) {
   );
 }
 
-function CoinTable({ data }: { data: CoinsMarkets[] }) {
+function CoinTable({ data, page }: { data: CoinsMarkets[], page: number }) {
+  const ITEMS_PER_PAGE = 100;
   return (
     <div className="relative inline-block min-w-full align-middle ">
       <div className="overflow-hidden rounded-xl border bg-foreground border-gray-300 dark:border-gray-800 ">
@@ -79,7 +80,8 @@ function CoinTable({ data }: { data: CoinsMarkets[] }) {
           </thead>
           <tbody className="divide-y divide-gray-300 dark:divide-gray-800">
             {data.map((coin, index: number) => {
-              return <CoinTableItem key={coin.id} index={index} coin={coin} />;
+              const globalIndex = (page - 1) * ITEMS_PER_PAGE + index + 1;
+              return <CoinTableItem key={coin.id} index={globalIndex} coin={coin} />;
             })}
           </tbody>
         </table>

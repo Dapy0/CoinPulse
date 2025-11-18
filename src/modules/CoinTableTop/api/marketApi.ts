@@ -15,3 +15,12 @@ export const fetchTopCoins = async (page: number) => {
 
   return response.data;
 };
+
+export const searchCoins = async (query: string) => {
+  if (!query) return [];
+
+  const response = await api.get("/search", {
+    params: { query },
+  });
+  return response.data.coins;
+};

@@ -1,5 +1,4 @@
 import { CoinDetailBlock } from "@/modules/CoinDetails";
-import { useQuery } from "@tanstack/react-query";
 import { useParams } from "@tanstack/react-router";
 
 export const CoinDetailPage = () => {

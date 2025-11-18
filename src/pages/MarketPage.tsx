@@ -21,7 +21,7 @@ export const MarketPage = () => {
         <CoinTableTop page={page} />
       </main>
       <footer className="pt-4 shrink-0 ">
-        <Pagination currentPage={page} totalPages={20} search={(prev) => ({ page: prev })} />
+        <Pagination currentPage={page} totalPages={100} search={(prev) => ({ page: prev })} />
       </footer>
     </div>
   );
