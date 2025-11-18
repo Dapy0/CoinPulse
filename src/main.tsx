@@ -3,21 +3,16 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { router } from "./router";
 import { RouterProvider } from "@tanstack/react-router";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: 1,
-      staleTime: 1000 * 30,
-    },
-  },
-});
+import QueryProvider from "./queryClient";
+import { ThemeProvider } from "./context/ThemeContext";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <QueryProvider>
+      <ThemeProvider defaultTheme="dark" storageKey="theme">
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </QueryProvider>
   </StrictMode>,
 );

@@ -1,5 +1,5 @@
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { PaginationButton } from "../PaginationButton/PaginationButton";
+import { PaginationButton } from "../PaginationButton";
 interface PaginationProps {
   currentPage: number;
   totalPages: number;

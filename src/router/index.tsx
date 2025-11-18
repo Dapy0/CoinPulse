@@ -17,7 +17,7 @@ const indexRoute = createRoute({
   component: MarketPage,
   validateSearch: (search: Record<string, unknown>): CoinSearch => {
     return {
-      page: Number(search?.page == 0 ? 1 : (search?.page ?? 1)),
+      page: Number(search?.page) ||1,
     };
   },
 });
