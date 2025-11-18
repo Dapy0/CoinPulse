@@ -51,8 +51,8 @@ export const MainLayout = () => {
           </div>
         </div>
       </aside>
-
-      <div className="flex-1 p-8 flex flex-col overflow-hidden  ">
+      {/* flex flex-col  */}
+      <div className="flex-1 p-8 overflow-hidden  ">
         <Outlet />
       </div>
     </div>

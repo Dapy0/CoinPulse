@@ -30,7 +30,7 @@ function CoinTableItem({ coin, index }: ICoinTableItemProps) {
             : "text-red-500  dark:text-red-400"
         }`}
       >
-        {coin.price_change_percentage_24h >= 0 ? "+": "-"}2.54%
+        {coin.price_change_percentage_24h >= 0 ? "+" : "-"}2.54%
       </td>
       <td className="">${coin.market_cap.toLocaleString()}</td>
       <td className="">${coin.total_volume.toLocaleString()}</td>

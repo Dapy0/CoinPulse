@@ -1,4 +1,3 @@
-
 import Pagination from "@/components/Pagination/Pagination";
 import CoinTableTop from "@/modules/CoinTableTop";
 import InputSearch from "@/modules/InputSearch/InputSearch";
@@ -8,7 +7,7 @@ export const MarketPage = () => {
   const { page = 1 } = useSearch({ from: "/" });
 
   return (
-    <div className="dark:text-white  flex flex-col flex-1 h-full max-w-[80%]  ">
+    <div className="dark:text-white  flex-1 flex flex-col  h-full mx-auto max-w-6xl  min-w-sm ">
       <header className="flex justify-between items-start mb-6 gap-4 flex-wrap shrink-0">
         <div className="flex flex-col gap-1">
           <p className="text-3xl sm:text-4xl font-black leading-tight tracking-[-0.03em]">Market Overview</p>
@@ -18,10 +17,10 @@ export const MarketPage = () => {
           <InputSearch />
         </div>
       </header>
-      <main className="overflow-x-auto overflow-y-auto flex-1 ">
+      <main className="overflow-x-auto overflow-y-auto flex-1 pb-2 ">
         <CoinTableTop page={page} />
       </main>
-      <footer className="pt-4 shrink-0">
+      <footer className="pt-4 shrink-0 ">
         <Pagination currentPage={page} totalPages={20} search={(prev) => ({ page: prev })} />
       </footer>
     </div>

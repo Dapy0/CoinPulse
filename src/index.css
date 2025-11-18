@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-* {
+*,
+body,
+html {
   box-sizing: border-box;
 }
 :root {
@@ -45,6 +47,6 @@
   }
 
   .dark ::-webkit-scrollbar-thumb {
-    background-color: rgb(var(--primary),40); /* 'dark:scrollbar-thumb-blue-400' */
+    background-color: rgb(var(--primary), 40); /* 'dark:scrollbar-thumb-blue-400' */
   }
 }

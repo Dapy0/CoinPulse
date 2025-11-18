@@ -8,7 +8,7 @@ export const fetchTopCoins = async (page: number) => {
       per_page: 100,
       page: page,
       sparkline: true,
-      
+
       price_change_percentage: "24h",
     },
   });
