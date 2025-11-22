@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { usePortfolioStore } from '../store/usePortfolioStore';
-import Button from '@/components/Button/Button';
-import { IconX } from '@tabler/icons-react';
+import React, { useState } from "react";
+import { usePortfolioStore } from "../store/usePortfolioStore";
+import Button from "@/components/Button/Button";
+import { IconX } from "@tabler/icons-react";
 
 interface AddCoinModalProps {
   isOpen: boolean;
@@ -9,8 +9,8 @@ interface AddCoinModalProps {
 }
 
 export const AddCoinModal = ({ isOpen, onClose }: AddCoinModalProps) => {
-  const [coinId, setCoinId] = useState('');
-  const [amount, setAmount] = useState('');
+  const [coinId, setCoinId] = useState("");
+  const [amount, setAmount] = useState("");
   const addCoin = usePortfolioStore((state) => state.addCoin);
 
   if (!isOpen) return null;
@@ -19,19 +19,16 @@ export const AddCoinModal = ({ isOpen, onClose }: AddCoinModalProps) => {
     e.preventDefault();
     if (!coinId || !amount) return;
 
-   
     addCoin(coinId.toLowerCase().trim(), parseFloat(amount));
 
-    setCoinId('');
-    setAmount('');
+    setCoinId("");
+    setAmount("");
     onClose();
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
       <div className="bg-white dark:bg-[#111827] w-full max-w-md rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 p-6 relative">
-
-      
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">Add Transaction</h2>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
@@ -39,7 +36,6 @@ export const AddCoinModal = ({ isOpen, onClose }: AddCoinModalProps) => {
           </button>
         </div>
 
-     
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
@@ -56,9 +52,7 @@ export const AddCoinModal = ({ isOpen, onClose }: AddCoinModalProps) => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              Amount
-            </label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Amount</label>
             <input
               type="number"
               value={amount}

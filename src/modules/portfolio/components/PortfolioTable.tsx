@@ -4,13 +4,14 @@ import { IconArrowDown, IconArrowUp, IconLoader2, IconTrash } from "@tabler/icon
 
 // 1. Определяем интерфейс для пропсов
 interface PortfolioTableProps {
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   assets: any[];
   isLoading: boolean;
 }
 
 // 2. Компонент теперь принимает данные снаружи, а не запрашивает сам
 export const PortfolioTable = ({ assets, isLoading }: PortfolioTableProps) => {
-  const removeCoin = usePortfolioStore(state => state.removeCoin);
+  const removeCoin = usePortfolioStore((state) => state.removeCoin);
 
   // 3. Логика загрузки на основе пропса
   if (isLoading) {
@@ -43,11 +44,10 @@ export const PortfolioTable = ({ assets, isLoading }: PortfolioTableProps) => {
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-          {assets.map((coin: any) => (
+          {assets.map((coin) => (
             <tr key={coin.id} className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
-
               <td className="p-4">
-                <Link to={`/coin/${coin.id}`} className="flex items-center gap-3 hover:opacity-80">
+                <Link to="/coin/$coinId" params={{ coinId: coin.id }} className="flex items-center gap-3 hover:opacity-80">
                   <img src={coin.image} alt={coin.name} className="w-8 h-8 rounded-full" />
                   <div>
                     <div className="font-bold text-gray-900 dark:text-white">{coin.name}</div>
@@ -58,15 +58,20 @@ export const PortfolioTable = ({ assets, isLoading }: PortfolioTableProps) => {
 
               <td className="p-4 text-right font-medium dark:text-gray-200">
                 ${coin.current_price.toLocaleString()}
-                <div className={`text-xs flex justify-end items-center ${coin.price_change_percentage_24h >= 0 ? 'text-green-500' : 'text-red-500'
-                  }`}>
+                <div
+                  className={`text-xs flex justify-end items-center ${
+                    coin.price_change_percentage_24h >= 0 ? "text-green-500" : "text-red-500"
+                  }`}
+                >
                   {coin.price_change_percentage_24h >= 0 ? <IconArrowUp size={10} /> : <IconArrowDown size={10} />}
                   {Math.abs(coin.price_change_percentage_24h).toFixed(2)}%
                 </div>
               </td>
 
               <td className="p-4 text-right">
-                <div className="font-bold dark:text-white">{coin.amount} {coin.symbol.toUpperCase()}</div>
+                <div className="font-bold dark:text-white">
+                  {coin.amount} {coin.symbol.toUpperCase()}
+                </div>
               </td>
 
               <td className="p-4 text-right font-bold dark:text-white">

@@ -38,7 +38,7 @@ function CoinTableItem({ coin, index }: ICoinTableItemProps) {
   );
 }
 
-function CoinTable({ data, page }: { data: CoinsMarkets[], page: number }) {
+function CoinTable({ data, page }: { data: CoinsMarkets[]; page: number }) {
   const ITEMS_PER_PAGE = 100;
   return (
     <div className="relative inline-block min-w-full align-middle ">

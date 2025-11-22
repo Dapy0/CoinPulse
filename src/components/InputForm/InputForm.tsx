@@ -1,7 +1,9 @@
 import { IconSearch, type ReactNode } from "@tabler/icons-react";
-interface IInputForm {
+interface IInputForm  {
   value: string;
   children?: ReactNode;
+  placeholder?:string;
+  onFocus?: () => void;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -13,7 +15,7 @@ export default function InputForm({ value, onChange, ...props }: IInputForm) {
       </div>
       <input
         key={"searchInput"}
-        className="peer form-input resize-none overflow-hidden focus:outline-0 focus:ring-2 focus:ring-primary border-none placeholder:text-gray-500 px-4 text-sm font-normal leading-normal focus:rounded-r-lg"
+        className="peer form-input resize-none overflow-hidden focus:outline-0 focus:ring-2 focus:ring-primary border-none placeholder:text-gray-500 px-4 text-sm font-normal leading-normal focus:rounded-r-lg "
         type="text"
         placeholder="Input coin name..."
         value={value}

@@ -1,1 +1,1 @@
-export { AddCoinModal } from './components/AddCoinModal'
+export { AddCoinModal } from "./components/AddCoinModal";

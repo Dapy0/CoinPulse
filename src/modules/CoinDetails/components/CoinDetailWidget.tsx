@@ -1,4 +1,4 @@
-import { formatNumber } from "../utils/formatNumbers";
+// import { formatNumber } from "../utils/formatNumbers";
 
 export default function CoinDetailWidget({ name, value }: { name: string; value: string }) {
   return (

@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 export interface PortfolioItem {
   id: string;
@@ -19,18 +19,13 @@ export const usePortfolioStore = create<PortfolioState>()(
 
       addCoin: (id, amount) =>
         set((state) => {
-
           const existingItem = state.items.find((item) => item.id === id);
 
           if (existingItem) {
-
             return {
-              items: state.items.map((item) =>
-                item.id === id ? { ...item, amount: item.amount + amount } : item
-              ),
+              items: state.items.map((item) => (item.id === id ? { ...item, amount: item.amount + amount } : item)),
             };
           }
-
 
           return {
             items: [...state.items, { id, amount }],
@@ -43,7 +38,7 @@ export const usePortfolioStore = create<PortfolioState>()(
         })),
     }),
     {
-      name: 'coinpulse-portfolio',
-    }
-  )
+      name: "coinpulse-portfolio",
+    },
+  ),
 );

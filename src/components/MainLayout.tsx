@@ -12,20 +12,20 @@ export const MainLayout = () => {
   };
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-
-
-
   return (
     <div className="flex flex-col md:flex-row h-screen bg-background dark:text-white ">
-      <div className={`${isSidebarOpen ? "block" : 'hidden'} md:hidden backdrop-blur-xs fixed inset-0 z-10 transition-all`} />
+      <div
+        className={`${isSidebarOpen ? "block" : "hidden"} md:hidden backdrop-blur-xs fixed inset-0 z-10 transition-all`}
+      />
 
-      <aside className={`fixed top-0 left-0 right-0 z-30 p-4  flex flex-col gap-6  
- ${isSidebarOpen ? "translate-y-0 md:w-72" : "-translate-y-full md:w-20"} md:static md:h-full md:top-0 md:flex md:flex-col md:translate-y-0  bg-foreground border-r border-r-gray-300 dark:border-r-gray-700 shadow-sm `}>
-
+      <aside
+        className={`fixed top-0 left-0 right-0 z-30 p-4  flex flex-col gap-6  
+ ${isSidebarOpen ? "translate-y-0 md:w-72" : "-translate-y-full md:w-20"} md:static md:h-full md:top-0 md:flex md:flex-col md:translate-y-0  bg-foreground border-r border-r-gray-300 dark:border-r-gray-700 shadow-sm `}
+      >
         <div className={`flex justify-between items-center gap-2 ${isSidebarOpen ? "md:flex-row" : "md:flex-col"}`}>
           <div className="flex gap-2 items-center text-center">
             <PieChartIcon className="size-10 text-blue-600" />
-            <h3 className={`text-2xl font-bold ${isSidebarOpen ? 'inline' : 'hidden '}`}>CoinPulse</h3>
+            <h3 className={`text-2xl font-bold ${isSidebarOpen ? "inline" : "hidden "}`}>CoinPulse</h3>
           </div>
           <IconMenu2 onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="dark:text-gray-400  text-gray-600" />
         </div>
@@ -36,7 +36,8 @@ export const MainLayout = () => {
             <IconChartAreaLine /> Market
           </SideBarBtn>
           <SideBarBtn to={"/portfolio"} expanded={isSidebarOpen}>
-            <IconWallet />Portfolio
+            <IconWallet />
+            Portfolio
           </SideBarBtn>
           {/* <SideBarBtn to={"/news"}>News</SideBarBtn> */}
         </nav>

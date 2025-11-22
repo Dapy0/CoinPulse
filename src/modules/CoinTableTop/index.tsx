@@ -1,4 +1,4 @@
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import {  useQuery } from "@tanstack/react-query";
 import { fetchTopCoins } from "./api/marketApi";
 import CoinTable from "@/components/CoinTable/CoinTable";
 import { IconLoader } from "@tabler/icons-react";
