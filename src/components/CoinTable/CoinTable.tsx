@@ -2,38 +2,7 @@ import { IconArrowsSort } from "@tabler/icons-react";
 import type { CoinsMarkets, ICoinTableItemProps } from "./types";
 import { useNavigate } from "@tanstack/react-router";
 
-// function CoinTableItem({ coin, index }: ICoinTableItemProps) {
-//   const navigate = useNavigate();
-//   return (
-//     <tr
-//       onClick={() => {
-//         navigate({ to: `/coin/${coin.id}` });
-//       }}
-//       className="text-sm font-normal leading-normal text-right hover:bg-gray-200/70 dark:hover:bg-white/5 transition-colors duration-200 cursor-pointer odd:bg-white/1 *:h-[68px] *:px-1 *:py-1 sm:*:px-4 sm:*:py-2"
-//     >
-//       <td className=" text-gray-500 dark:text-gray-400 text-center">{index}</td>
-//       <td className="max-w-[10%] sm:w-auto">
-//         <div className="flex gap-3 items-center  text-left">
-//           <img src={coin.image} className="size-8 aspect-square rounded-full" />
-//           <div className="">
-//             <p className="font-medium truncate">{coin.name}</p>
-//             <p className="text-xs text-gray-500 dark:text-gray-400 uppercase">{coin.symbol}</p>
-//           </div>
-//         </div>
-//       </td>
-//       <td className="hidden sm:table-cell text-left">${coin.current_price.toLocaleString()}</td>
-//       <td
-//         className={`text-center sm:text-left ${coin.price_change_percentage_24h >= 0
-//           ? "text-green-500  dark:text-green-400"
-//           : "text-red-500  dark:text-red-400"
-//           }`}
-//       >
-//         {coin.price_change_percentage_24h > 0 && "+"}{coin.price_change_percentage_24h || 0}%
-//       </td>
-     
-//     </tr>
-//   );
-// }
+
 function CoinTableItem({ coin, index }: ICoinTableItemProps) {
   const navigate = useNavigate();
   return (
