@@ -12,13 +12,13 @@ export default function CoinTableTop({ page }: { page: number }) {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-64">
-        <IconLoader className="animate-spin text-primary size-40 " />
+      <div className="flex flex-1 justify-center items-center ">
+        <IconLoader className="animate-spin text-primary size-20 " />
       </div>
     );
   }
   if (isError) {
-    return <div className="text-center text-red-500 p-10">Error getting coins (API Error)</div>;
+    return <div className="text-center text-red-500 ">Error getting coins (API Error)</div>;
   }
 
   return <CoinTable data={data} page={page} />;

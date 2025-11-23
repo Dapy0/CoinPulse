@@ -7,7 +7,7 @@ export const MarketPage = () => {
   const { page = 1 } = useSearch({ from: "/" });
 
   return (
-    <div className="dark:text-white  flex-1 flex flex-col  h-full mx-auto max-w-6xl  min-w-sm ">
+    <div className="dark:text-white  flex-1 flex flex-col  h-full mx-auto max-w-6xl  flex-1 ">
       <header className="flex justify-between items-start mb-6 gap-4 flex-wrap shrink-0">
         <div className="flex flex-col gap-1">
           <p className="text-2xl sm:text-4xl font-black leading-tight tracking-[-0.03em]">Market Overview</p>
@@ -17,7 +17,8 @@ export const MarketPage = () => {
           <InputSearch />
         </div>
       </header>
-      <main className="overflow-x-auto overflow-y-auto flex-1 pb-2 ">
+      <main className="flex overflow-y-auto overflow-x-hidden flex-1  justify-center pb-2 w-full">
+        
         <CoinTableTop page={page} />
       </main>
       <footer className="pt-4 shrink-0 ">
