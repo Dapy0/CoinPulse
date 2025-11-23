@@ -107,7 +107,7 @@ export default function CoinDetailBlock({ coinId }: { coinId: string }) {
                   borderRadius: "8px",
                 }}
                 labelFormatter={(ts) => format(new Date(ts), "MMM d, yyyy")}
-                formatter={(value: number) => [`$${value.toFixed(2)}`, "Price"]}
+                formatter={(value: number) => [`$${value.toFixed(4)}`, "Price"]}
               />
               <Line type="bump" dataKey="price" stroke="rgb(var(--primary))" strokeWidth={3} dot={false} />
             </LineChart>

@@ -18,7 +18,6 @@ export const MarketPage = () => {
         </div>
       </header>
       <main className="flex overflow-y-auto overflow-x-hidden flex-1  justify-center pb-2 w-full">
-        
         <CoinTableTop page={page} />
       </main>
       <footer className="pt-4 shrink-0 ">

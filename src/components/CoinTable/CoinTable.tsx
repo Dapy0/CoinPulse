@@ -23,7 +23,7 @@ function CoinTableItem({ coin, index }: ICoinTableItemProps) {
           </div>
         </div>
       </td>
-      <td className="hidden sm:table-cell text-left">${coin.current_price.toLocaleString()}</td>
+      <td className="hidden sm:table-cell text-left">${coin.current_price}</td>
       <td className={`text-center sm:text-left w-[60px] sm:w-auto  ${coin.price_change_percentage_24h >= 0
           ? "text-green-500  dark:text-green-400"
           : "text-red-500  dark:text-red-400"
