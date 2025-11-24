@@ -25,9 +25,9 @@ function CoinTableItem({ coin, index }: ICoinTableItemProps) {
       </td>
       <td className="hidden sm:table-cell text-left">${coin.current_price}</td>
       <td className={`text-center sm:text-left w-[60px] sm:w-auto  ${coin.price_change_percentage_24h >= 0
-          ? "text-green-500  dark:text-green-400"
-          : "text-red-500  dark:text-red-400"
-          }`}>
+        ? "text-green-500  dark:text-green-400"
+        : "text-red-500  dark:text-red-400"
+        }`}>
         {coin.price_change_percentage_24h > 0 && "+"}{coin.price_change_percentage_24h || 0}%
       </td>
       <td className="hidden sm:table-cell sm:text-left">${coin.market_cap.toLocaleString()}</td>
@@ -38,9 +38,8 @@ function CoinTableItem({ coin, index }: ICoinTableItemProps) {
 function CoinTable({ data, page }: { data: CoinsMarkets[]; page: number }) {
   const ITEMS_PER_PAGE = data.length;
   return (
-    <div className="relative inline-block flex-1 align-middle w-auto">
-      <div className="rounded-xl border bg-foreground  border-gray-300 dark:border-gray-800 ">
-        <table className="w-full ">
+    <div className="relative w-full ">
+      <table className="w-full bg-foreground min-w-0 border   border-gray-300 dark:border-gray-800">
           <thead className="sticky top-0 z-20 text-right w-full">
             <tr className="rounded-lg  bg-foreground  uppercase text-gray-500 dark:text-gray-400 text-xs font-semibold tracking-wider text-right *:px-5 sm:*:px-4 *:py-2 sm:*:py-4 *:text-center ">
               <th className="rounded-tl-lg">#</th>
@@ -83,7 +82,6 @@ function CoinTable({ data, page }: { data: CoinsMarkets[]; page: number }) {
           </tbody>
         </table>
       </div>
-    </div>
   );
 }
 
