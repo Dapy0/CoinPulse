@@ -73,7 +73,7 @@ export const MainLayout = () => {
         </div>
       </aside>
 
-      <header className="md:hidden flex justify-between items-center p-4 shadow-sm bg-foreground">
+      <header className="sticky top-0 left-0 right-0 md:hidden flex justify-between items-center p-4 shadow-sm bg-foreground">
         <div className="flex gap-1 items-center text-center">
           <PieChartIcon className="size-8 text-blue-600" />
           <h3 className={`text-xl  font-bold `}>CoinPulse</h3>
