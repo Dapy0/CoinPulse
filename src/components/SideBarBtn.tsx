@@ -4,6 +4,7 @@ import { Children, type ReactNode } from "react";
 export interface ICustomButtonProps extends LinkProps {
   children: ReactNode;
   expanded: boolean;
+  onClick?: () => void;
 }
 
 export const SideBarBtn = ({ children, expanded, ...props }: ICustomButtonProps) => {

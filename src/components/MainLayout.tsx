@@ -32,10 +32,10 @@ export const MainLayout = () => {
 
         <nav className={`flex flex-col flex-1 gap-4 md:mt-2 ${isSidebarOpen ? "*:aspect-auto" : "*:aspect-square"} `}>
           <hr className={`border-gray-300 dark:border-gray-700 w-full h-auto aspect-auto! `} />
-          <SideBarBtn to={"/"} expanded={isSidebarOpen}>
+          <SideBarBtn onClick={() => setIsSidebarOpen(!isSidebarOpen)} to={"/"} expanded={isSidebarOpen}>
             <IconChartAreaLine /> Market
           </SideBarBtn>
-          <SideBarBtn to={"/portfolio"} expanded={isSidebarOpen}>
+          <SideBarBtn onClick={() => setIsSidebarOpen(!isSidebarOpen)} to={"/portfolio"} expanded={isSidebarOpen}>
             <IconWallet />
             Portfolio
           </SideBarBtn>
