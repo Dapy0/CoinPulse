@@ -15,9 +15,11 @@ html {
 
 :root[class~="dark"] {
   --primary: 56, 189, 248;
-  /* --secondary: 235, 248, 254; */
   --background: 11, 17, 33;
   --foreground: 17, 24, 38;
+}
+html, body{
+  background-color: rgb(var(--background));
 }
 
 @theme inline {

@@ -48,7 +48,7 @@ export const MainLayout = () => {
           <div className="flex items-center justify-between">
             <div className={`flex gap-3 items-center ${!isSidebarOpen && "hidden"}`}>
               <img
-                className="size-fit rounded-full max-w-10"
+                className="size-fit rounded-full max-w-10 max-h-10"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9bfBo_L7BNZePomtQc7t__D1KOK6tEa8wlXClIpMd8cSl0f0PoOW6gRtvrShjqjYd8TH9OKo9qO4Xszt0_xMPa5S-UDERKVfWMHEvcrY4d0EUNB-WapI19oA9IQQAqkD_w8A4ekEYEFuVr7ZmaYnl0yqQGDtMgN3sX21pOtj3i2EGfWrKvyBOM4wGBnyGe_XxdqKqQJ1EeQXcOfj3nItbharMa2vcdthJK7V1iFFNothQV7NOg3d5470bogGng4PDC6c8GQWUIMdf"
                 alt="img"
               />
