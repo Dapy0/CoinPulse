@@ -14,7 +14,7 @@ export const MainLayout = () => {
 
   return (
     <div className="flex flex-col md:flex-row h-screen  bg-background dark:text-white ">
-      <div
+      <div onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className={`${isSidebarOpen ? "block" : "hidden"} md:hidden backdrop-blur-xs fixed inset-0 z-10 transition-all`}
       />
 
