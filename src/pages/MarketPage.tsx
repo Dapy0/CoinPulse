@@ -17,7 +17,7 @@ export const MarketPage = () => {
           <InputSearch />
         </div>
       </header>
-      <main className="flex overflow-y-auto overflow-x-auto flex-1  justify-center pb-2 w-full">
+      <main className="flex overflow-y-auto overflow-x-hidden sm:overflow-x-auto flex-1  justify-center pb-2 w-full">
         <CoinTableTop page={page} />
       </main>
       <footer className="pt-4 shrink-0 ">

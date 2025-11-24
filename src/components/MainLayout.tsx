@@ -13,7 +13,7 @@ export const MainLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex flex-col md:flex-row h-screen bg-background dark:text-white ">
+    <div className="flex flex-col md:flex-row h-screen  bg-background dark:text-white ">
       <div
         className={`${isSidebarOpen ? "block" : "hidden"} md:hidden backdrop-blur-xs fixed inset-0 z-10 transition-all`}
       />
@@ -82,7 +82,7 @@ export const MainLayout = () => {
       </header>
 
       {/* flex flex-col  */}
-      <div className="flex-1 p-8 overflow-hidden  ">
+      <div className="flex-1  p-8 overflow-hidden  overflow-y-auto  sm:no-scrollbar ">
         <Outlet />
       </div>
     </div>
