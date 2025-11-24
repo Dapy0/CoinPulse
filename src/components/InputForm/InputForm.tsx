@@ -16,7 +16,7 @@ export default function InputForm({ value, onChange, onClose, ...props }: IInput
       </div>
       <input
         key={"searchInput"}
-        className="form-input w-full border-none outline-none focus:outline-none focus:ring-0 placeholder:text-gray-500 pl-0 pr-10 text-sm font-normal leading-normal "
+        className="form-input w-full border-none outline-none focus:outline-none focus:ring-0 placeholder:text-gray-500 pl-0 pr-10 text-sm font-normal leading-normal truncate"
         type="text"
         placeholder="Input coin name..."
         value={value}
