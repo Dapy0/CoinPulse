@@ -60,7 +60,7 @@ export const AllocationChart = () => {
   const topAsset = chartData[0];
 
   return (
-    <div className="h-64 w-full relative">
+    <div className=" h-40 sm:h-54 w-full relative">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie

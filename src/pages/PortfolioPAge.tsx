@@ -14,7 +14,8 @@ export const PortfolioPage = () => {
   const [filterQuery, setFilterQuery] = useState("");
   const { totalBalance, totalChange24hValue, totalChange24hPercent, assets, isLoading } = usePortfolioAssets();
   const isPositive = totalChange24hValue >= 0;
-  // 2. Логика фильтрации
+
+
   const filteredAssets = assets.filter(
     (asset: { name: string; symbol: string; }) =>
       asset.name.toLowerCase().includes(filterQuery.toLowerCase()) ||
@@ -29,7 +30,7 @@ export const PortfolioPage = () => {
           <p className="text-gray-400 text-sm sm:text-base font-normal">Review all your coins</p>
         </div>
         <div className="w-full sm:w-auto flex flex-col lg:flex-row h-full gap-4 ">
-          <InputForm value={filterQuery} onChange={(e) => setFilterQuery(e.target.value)} />
+          <InputForm value={filterQuery} onChange={(e) => { e.preventDefault(); setFilterQuery(e.target.value) }} onClose={() => setFilterQuery("")} />
           <Button {...({ onClick: () => setIsModalOpen(true) })}>
             <IconPlus />
             Add New Coin
@@ -41,12 +42,12 @@ export const PortfolioPage = () => {
           <div className="flex flex-col gap-2 rounded-lg p-6 border border-gray-300 dark:border-gray-600 bg-foreground shadow-sm overflow-hidden">
             <p className="text-gray-600 dark:text-gray-400 text-base font-medium leading-normal">Total Balance</p>
 
-            <p className="tracking-tight text-3xl font-bold leading-tight">
+            <p className="tracking-tight text-3xl font-bold leading-tight wrap-break-word">
               ${totalBalance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </p>
 
-            <div className="flex items-center gap-2">
-              <p className={`text-base font-medium leading-normal ${isPositive ? "text-green-500" : "text-red-500"}`}>
+            <div className="flex items-center gap-2 ">
+              <p className={`text-base font-medium leading-normal ${isPositive ? "text-green-500" : "text-red-500"} `}>
                 {isPositive ? "+" : ""}
                 {totalChange24hPercent.toFixed(2)}%
               </p>
