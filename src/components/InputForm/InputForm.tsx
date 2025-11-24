@@ -32,6 +32,5 @@ export default function InputForm({ value, onChange, onClose, ...props }: IInput
         </button>
       )}
     </form>
-
   );
 }

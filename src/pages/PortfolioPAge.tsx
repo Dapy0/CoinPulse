@@ -15,9 +15,8 @@ export const PortfolioPage = () => {
   const { totalBalance, totalChange24hValue, totalChange24hPercent, assets, isLoading } = usePortfolioAssets();
   const isPositive = totalChange24hValue >= 0;
 
-
   const filteredAssets = assets.filter(
-    (asset: { name: string; symbol: string; }) =>
+    (asset: { name: string; symbol: string }) =>
       asset.name.toLowerCase().includes(filterQuery.toLowerCase()) ||
       asset.symbol.toLowerCase().includes(filterQuery.toLowerCase()),
   );
@@ -30,8 +29,15 @@ export const PortfolioPage = () => {
           <p className="text-gray-400 text-sm sm:text-base font-normal">Review all your coins</p>
         </div>
         <div className="w-full sm:w-auto flex flex-col lg:flex-row h-full gap-4 ">
-          <InputForm value={filterQuery} onChange={(e) => { e.preventDefault(); setFilterQuery(e.target.value) }} onClose={() => setFilterQuery("")} />
-          <Button {...({ onClick: () => setIsModalOpen(true) })}>
+          <InputForm
+            value={filterQuery}
+            onChange={(e) => {
+              e.preventDefault();
+              setFilterQuery(e.target.value);
+            }}
+            onClose={() => setFilterQuery("")}
+          />
+          <Button {...{ onClick: () => setIsModalOpen(true) }}>
             <IconPlus />
             Add New Coin
           </Button>

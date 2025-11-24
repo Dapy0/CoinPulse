@@ -47,7 +47,11 @@ export const PortfolioTable = ({ assets, isLoading }: PortfolioTableProps) => {
           {assets.map((coin) => (
             <tr key={coin.id} className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
               <td className="p-4">
-                <Link to="/coin/$coinId" params={{ coinId: coin.id }} className="flex items-center gap-3 hover:opacity-80">
+                <Link
+                  to="/coin/$coinId"
+                  params={{ coinId: coin.id }}
+                  className="flex items-center gap-3 hover:opacity-80"
+                >
                   <img src={coin.image} alt={coin.name} className="w-8 h-8 rounded-full" />
                   <div>
                     <div className="font-bold text-gray-900 dark:text-white">{coin.name}</div>

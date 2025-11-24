@@ -9,9 +9,9 @@ import { useState } from "react";
 export default function CoinDetailBlock({ coinId }: { coinId: string }) {
   const [days, setDays] = useState<number>(7);
   const periods = [
-    { label: "7d", value: 7, textValue: '7 days' },
-    { label: "1m", value: 30, textValue: '30 days' },
-    { label: "1y", value: 365, textValue: '1 year' },
+    { label: "7d", value: 7, textValue: "7 days" },
+    { label: "1m", value: 30, textValue: "30 days" },
+    { label: "1y", value: 365, textValue: "1 year" },
   ];
   const { data: coin, isLoading: isLoadingCoin } = useQuery({
     queryKey: ["coinDetails", coinId],
@@ -22,7 +22,6 @@ export default function CoinDetailBlock({ coinId }: { coinId: string }) {
     queryKey: ["coinChart", coinId, days],
     queryFn: () => fetchCoinMarketChart(coinId, days),
   });
-
 
   if (isLoadingCoin || isLoadingChart) {
     return (
@@ -59,7 +58,8 @@ export default function CoinDetailBlock({ coinId }: { coinId: string }) {
             <p
               className={`text-lg  font-medium ${isPositive ? "text-green-500 dark:text-green-400" : "text-red-500 dark:text-red-400"}`}
             >
-              {isPositive && "+"}{priceChange.toFixed(2)}%
+              {isPositive && "+"}
+              {priceChange.toFixed(2)}%
             </p>
             <span className="text-gray-500 dark:text-gray-400 text-sm">(24hr)</span>
           </div>
@@ -84,9 +84,14 @@ export default function CoinDetailBlock({ coinId }: { coinId: string }) {
           </div>
         </div>
         <div className="h-100 flex items-center justify-center mx-auto ">
-          {
-            !chartData ? <h1 className="text-center text-3xl dark:text-gray-400 text-gray-600 ">No data</h1> :
-              <ResponsiveContainer className={"outline-none *:outline-none focus:outline-none *:focus:outline-none focus-within:outline-none [&_.recharts-surface]:outline-none *:[&_.recharts-surface]:outline-none"}>
+          {!chartData ? (
+            <h1 className="text-center text-3xl dark:text-gray-400 text-gray-600 ">No data</h1>
+          ) : (
+            <ResponsiveContainer
+              className={
+                "outline-none *:outline-none focus:outline-none *:focus:outline-none focus-within:outline-none [&_.recharts-surface]:outline-none *:[&_.recharts-surface]:outline-none"
+              }
+            >
               <LineChart data={chartData}>
                 <XAxis
                   dataKey="timestamp"
@@ -114,8 +119,7 @@ export default function CoinDetailBlock({ coinId }: { coinId: string }) {
                 <Line type="bump" dataKey="price" stroke="rgb(var(--primary))" strokeWidth={3} dot={false} />
               </LineChart>
             </ResponsiveContainer>
-          }
-
+          )}
         </div>
       </main>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">

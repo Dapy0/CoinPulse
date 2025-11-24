@@ -34,7 +34,7 @@ const coinDetailRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([indexRoute, portfolioRoute, coinDetailRoute]);
 
-const router = createRouter({ routeTree });
+const router = createRouter({ routeTree, basepath: "/CoinPulse" });
 
 declare module "@tanstack/react-router" {
   interface Register {

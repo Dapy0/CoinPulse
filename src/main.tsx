@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { router } from "./router";
+import { router } from "./routes/__root";
 import { RouterProvider } from "@tanstack/react-router";
 
 import QueryProvider from "./queryClient";

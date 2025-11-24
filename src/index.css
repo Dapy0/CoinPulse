@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @custom-variant dark (&:where(.dark, .dark *));
 *,
 body,
@@ -22,12 +23,11 @@ html {
 @theme inline {
   --default-font-family: "Inter", sans-serif;
   --color-primary: rgb(var(--primary));
-  /* --color-secondary: rgb(var(--color-secondary)); */
+
   --color-background: rgb(var(--background));
   --color-foreground: rgb(var(--foreground));
 }
 @layer base {
-  /* Стилизация для Webkit-браузеров */
   ::-webkit-scrollbar {
     width: 8px; /* 'scrollbar-thin' */
     height: 8px;
@@ -36,21 +36,20 @@ html {
 
   ::-webkit-scrollbar-track {
     background: #f1f5f9;
-    scrollbar-gutter: stable; /* 'scrollbar-track-gray-100' */
+    scrollbar-gutter: stable;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #3b82f6; /* 'scrollbar-thumb-blue-500' */
+    background-color: #3b82f6;
     border-radius: 4px;
-    /* 'scrollbar-thumb-rounded' */
   }
 
   .dark ::-webkit-scrollbar-track {
-    background: #1f2937; /* 'dark:scrollbar-track-gray-800' */
+    background: #1f2937;
   }
 
   .dark ::-webkit-scrollbar-thumb {
-    background-color: rgb(var(--primary), 40); /* 'dark:scrollbar-thumb-blue-400' */
+    background-color: rgb(var(--primary), 40);
   }
 }
 
@@ -61,8 +60,7 @@ html {
 
   .sm\:no-scrollbar {
     -ms-overflow-style: none;
-    /* IE and Edge */
+
     scrollbar-width: none;
-    /* Firefox */
   }
 }

@@ -19,7 +19,7 @@ export const fetchCoinMarketChart = async (coinId: string, days: number = 7) => 
       vs_currency: "usd",
       days: days,
       interval: "daily",
-      precision: 6
+      precision: 6,
     },
   });
   return response.data.prices.map((price: number[]) => ({

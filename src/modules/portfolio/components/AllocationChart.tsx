@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, type TooltipProps } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, type TooltipContentProps } from "recharts";
 import { usePortfolioAssets } from "../hooks/usePortfolioAssets";
 
 const COLORS = [
@@ -11,8 +11,8 @@ const COLORS = [
   "#6366f1", // indigo
   "#14b8a6", // teal
 ];
-//@ts-ignore
-const CustomTooltip = ({ active, payload }: TooltipProps<number, string>) => {
+
+const CustomTooltip = ({ active, payload }: TooltipContentProps<number, string>) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     return (
@@ -44,19 +44,17 @@ export const AllocationChart = () => {
     );
   }
 
-  // 2. Подготовка данных: Берем ВСЕ монеты с ценой > 0
   const chartData = assets
-    .filter((asset: { totalValue: number; }) => asset.totalValue > 0)
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-    .map((asset: { name: any; symbol: any; totalValue: number; }) => ({
+    .filter((asset: { totalValue: number }) => asset.totalValue > 0)
+
+    .map((asset: { name: string; symbol: string; totalValue: number }) => ({
       name: asset.name,
       symbol: asset.symbol,
       value: asset.totalValue,
       percent: (asset.totalValue / totalBalance) * 100,
     }))
-    .sort((a: { value: number; }, b: { value: number; }) => b.value - a.value); // Сортируем от большего к меньшему
+    .sort((a: { value: number }, b: { value: number }) => b.value - a.value); // Сортируем от большего к меньшему
 
-  // Топовый актив для центра (по желанию)
   const topAsset = chartData[0];
 
   return (
@@ -74,12 +72,22 @@ export const AllocationChart = () => {
             stroke="none"
             minAngle={5}
           >
-            {/** biome-ignore lint/suspicious/noExplicitAny: <explanation> */}
-            {chartData.map((entry: { symbol: any; }, index: number) => (
+            {chartData.map((entry: { symbol: string }, index: number) => (
               <Cell key={`cell-${entry.symbol}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
-          <Tooltip wrapperStyle={{ zIndex: 100 }} content={<CustomTooltip />} />
+          <Tooltip
+            wrapperStyle={{ zIndex: 100 }}
+            content={
+              <CustomTooltip
+                active={false}
+                payload={[]}
+                coordinate={undefined}
+                accessibilityLayer={false}
+                activeIndex={undefined}
+              />
+            }
+          />
         </PieChart>
       </ResponsiveContainer>
 
