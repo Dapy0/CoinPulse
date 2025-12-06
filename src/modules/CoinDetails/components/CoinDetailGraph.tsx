@@ -32,14 +32,14 @@ export default function CoinDetailGraph({ id }: CoinFullInfo) {
 
   return (
     <main className="bg-foreground p-4 sm:p-6 rounded-xl border border-gray-300 dark:border-gray-600 mb-4 sm:mb-8 sm:min-w-sm ">
-      <div className="flex items-center justify-between mb-4 gap-4 flex-wrap">
-        <h2 className="text-xl font-bold">Price Graph ({periods.find((el) => el.value === days)?.textValue})</h2>
-        <div className="flex items-center gap-2 p-1.5 sm:p-1 bg-background/80 rounded-lg text-sm border border-gray-300 dark:border-gray-600 font-medium text-gray-600 dark:text-gray-400 *:px-3 sm:*:py-1  *:py-1.5 *:rounded-md *:hover:bg-white/10 *:uppercase">
+      <div className="flex items-center justify-between mb-4 gap-4 ">
+        <h2 className="text-xl font-bold flex flex-wrap gap-x-1 items-center">Price Graph<span className="not-sm:text-sm text-gray-600 dark:text-gray-400">({periods.find((el) => el.value === days)?.textValue})</span></h2>
+        <div className="flex items-center gap-2 p-0.5 sm:p-1 bg-background/80 rounded-lg text-sm border border-gray-300 dark:border-gray-600 font-medium text-gray-600 dark:text-gray-400 *:px-3 sm:*:py-1  *:py-1.5 *:rounded-md *:uppercase">
           {periods.map((period) => {
             return (
               <button
                 onClick={() => setDays(period.value as number)}
-                className={`uppercase transition-colors text-xs sm:text-sm ${days === period.value && "text-white bg-primary"}`}
+                className={`uppercase transition-colors text-xs font-bold sm:text-sm ${days === period.value ? "text-white bg-primary" : "hover:bg-gray-200 dark:hover:bg-white/10"}`}
               >
                 {period.label}
               </button>

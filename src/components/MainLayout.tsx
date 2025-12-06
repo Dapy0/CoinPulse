@@ -21,8 +21,7 @@ export const MainLayout = () => {
 
       <aside
         className={`fixed top-0 left-0 right-0 z-30 p-4  flex flex-col gap-6  
-            ${isSidebarOpen ? "translate-y-0 md:w-72" : "-translate-y-full md:w-20"} md:static md:h-full md:top-0 md:flex md:flex-col md:translate-y-0  bg-foreground border-r border-r-gray-300 dark:border-r-gray-700 shadow-sm `}
-      >
+            ${isSidebarOpen ? "translate-y-0 md:w-72" : "-translate-y-full md:w-20"} md:static md:h-full md:top-0 md:flex md:flex-col md:translate-y-0  bg-foreground border-r border-r-gray-300 dark:border-r-gray-700 shadow-sm `}>
         <div className={`flex justify-between items-center gap-2 ${isSidebarOpen ? "md:flex-row" : "md:flex-col"}`}>
           <div className="flex gap-2 items-center text-center">
             <PieChartIcon className="size-10 text-blue-600" />
@@ -86,7 +85,7 @@ export const MainLayout = () => {
       </header>
 
       {/* flex flex-col  */}
-      <div className="flex-1  p-8 overflow-hidden  overflow-y-auto  sm:no-scrollbar ">
+      <div className="flex-1 p-4 not-sm:pt-8 sm:p-6 md:p-8  overflow-hidden  overflow-y-auto  sm:no-scrollbar ">
         <Outlet />
       </div>
     </div>

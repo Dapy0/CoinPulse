@@ -1,4 +1,4 @@
-import { CoinDetailBlock } from "@/modules/CoinDetails";
+import { CoinDetails } from "@/modules/CoinDetails";
 import { useParams } from "@tanstack/react-router";
 
 export const CoinDetailPage = () => {
@@ -6,7 +6,7 @@ export const CoinDetailPage = () => {
 
   return (
     <div className="dark:text-white mx-auto max-w-6xl flex flex-col justify-between h-full ">
-      <CoinDetailBlock coinId={coinId} />
+      <CoinDetails coinId={coinId} />
     </div>
   );
 };

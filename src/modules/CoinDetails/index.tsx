@@ -1,1 +1,1 @@
-export { default as CoinDetailBlock } from "./components/CoinDetailBlock";
+export { default as CoinDetails } from "./pages/CoinDetails";

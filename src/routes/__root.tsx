@@ -1,5 +1,5 @@
 import { MainLayout } from "@/components/MainLayout";
-import { CoinDetailPage } from "@/pages/CoinDetailPage";
+import { CoinDetailPage } from "@/pages/CoinDetailsPage";
 import { MarketPage } from "@/pages/MarketPage";
 import { PortfolioPage } from "@/pages/PortfolioPage";
 import { createRootRoute, createRoute, createRouter } from "@tanstack/react-router";

@@ -1,11 +1,11 @@
-import CoinDetailWidget from "./CoinDetailWidget";
+import CoinDetailWidget from "../components/CoinDetailWidget";
 import { useQuery } from "@tanstack/react-query";
 import { fetchCoinDetails } from "../api/coinDetailsApi";
 import { IconLoader } from "@tabler/icons-react";
 import { formatNumber } from "../utils/formatNumbers";
-import CoinHeader from "./CoinDetailHeader";
+import CoinHeader from "../components/CoinDetailHeader";
 
-import CoinDetailGraph from "./CoinDetailGraph";
+import CoinDetailGraph from "../components/CoinDetailGraph";
 export default function CoinDetailBlock({ coinId }: { coinId: string }) {
   const { data: coin, isLoading: isLoadingCoin } = useQuery({
     queryKey: ["coinDetails", coinId],
