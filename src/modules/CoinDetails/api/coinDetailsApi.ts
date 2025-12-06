@@ -1,6 +1,7 @@
 import { api } from "@/api/config";
+import type { CoinFullInfo } from "coingecko-api-v3";
 
-export const fetchCoinDetails = async (coinId: string) => {
+export const fetchCoinDetails = async (coinId: string): Promise<CoinFullInfo> => {
   const response = await api.get(`/coins/${coinId}`, {
     params: {
       localization: false,

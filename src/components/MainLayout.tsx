@@ -15,12 +15,13 @@ export const MainLayout = () => {
   return (
     <div className="flex flex-col md:flex-row h-screen  bg-background dark:text-white ">
       <div
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className={`${isSidebarOpen ? "block" : "hidden"} md:hidden backdrop-blur-xs fixed inset-0 z-10 transition-all`}
       />
 
       <aside
         className={`fixed top-0 left-0 right-0 z-30 p-4  flex flex-col gap-6  
- ${isSidebarOpen ? "translate-y-0 md:w-72" : "-translate-y-full md:w-20"} md:static md:h-full md:top-0 md:flex md:flex-col md:translate-y-0  bg-foreground border-r border-r-gray-300 dark:border-r-gray-700 shadow-sm `}
+            ${isSidebarOpen ? "translate-y-0 md:w-72" : "-translate-y-full md:w-20"} md:static md:h-full md:top-0 md:flex md:flex-col md:translate-y-0  bg-foreground border-r border-r-gray-300 dark:border-r-gray-700 shadow-sm `}
       >
         <div className={`flex justify-between items-center gap-2 ${isSidebarOpen ? "md:flex-row" : "md:flex-col"}`}>
           <div className="flex gap-2 items-center text-center">
@@ -30,7 +31,10 @@ export const MainLayout = () => {
           <IconMenu2 onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="dark:text-gray-400  text-gray-600" />
         </div>
 
-        <nav className={`flex flex-col flex-1 gap-4 md:mt-2 ${isSidebarOpen ? "*:aspect-auto" : "*:aspect-square"} `}>
+        <nav
+          className={`flex flex-col flex-1 gap-4 md:mt-2 ${isSidebarOpen ? "*:aspect-auto" : "*:aspect-square"} `}
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        >
           <hr className={`border-gray-300 dark:border-gray-700 w-full h-auto aspect-auto! `} />
           <SideBarBtn to={"/"} expanded={isSidebarOpen}>
             <IconChartAreaLine /> Market
