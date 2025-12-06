@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchCoinDetails } from "../api/coinDetailsApi";
 import { IconLoader } from "@tabler/icons-react";
 import { formatNumber } from "../utils/formatNumbers";
-import CoinHeader from "./CoinHeader";
+import CoinHeader from "./CoinDetailHeader";
 
 import CoinDetailGraph from "./CoinDetailGraph";
 export default function CoinDetailBlock({ coinId }: { coinId: string }) {
