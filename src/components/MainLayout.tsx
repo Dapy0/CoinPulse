@@ -36,10 +36,10 @@ export const MainLayout = () => {
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
           <hr className={`border-gray-300 dark:border-gray-700 w-full h-auto aspect-auto! `} />
-          <SideBarBtn to={"/"} expanded={isSidebarOpen}>
+          <SideBarBtn onClick={() => setIsSidebarOpen(!isSidebarOpen)} to={"/"} expanded={isSidebarOpen}>
             <IconChartAreaLine /> Market
           </SideBarBtn>
-          <SideBarBtn to={"/portfolio"} expanded={isSidebarOpen}>
+          <SideBarBtn onClick={() => setIsSidebarOpen(!isSidebarOpen)} to={"/portfolio"} expanded={isSidebarOpen}>
             <IconWallet />
             Portfolio
           </SideBarBtn>
@@ -52,7 +52,7 @@ export const MainLayout = () => {
           <div className="flex items-center justify-between">
             <div className={`flex gap-3 items-center ${!isSidebarOpen && "hidden"}`}>
               <img
-                className="size-fit rounded-full max-w-10"
+                className="size-fit rounded-full max-w-10 max-h-10"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9bfBo_L7BNZePomtQc7t__D1KOK6tEa8wlXClIpMd8cSl0f0PoOW6gRtvrShjqjYd8TH9OKo9qO4Xszt0_xMPa5S-UDERKVfWMHEvcrY4d0EUNB-WapI19oA9IQQAqkD_w8A4ekEYEFuVr7ZmaYnl0yqQGDtMgN3sX21pOtj3i2EGfWrKvyBOM4wGBnyGe_XxdqKqQJ1EeQXcOfj3nItbharMa2vcdthJK7V1iFFNothQV7NOg3d5470bogGng4PDC6c8GQWUIMdf"
                 alt="img"
               />
@@ -77,7 +77,7 @@ export const MainLayout = () => {
         </div>
       </aside>
 
-      <header className="md:hidden flex justify-between items-center p-4 shadow-sm bg-foreground">
+      <header className="sticky top-0 left-0 right-0 md:hidden flex justify-between items-center p-4 shadow-sm bg-foreground">
         <div className="flex gap-1 items-center text-center">
           <PieChartIcon className="size-8 text-blue-600" />
           <h3 className={`text-xl  font-bold `}>CoinPulse</h3>
