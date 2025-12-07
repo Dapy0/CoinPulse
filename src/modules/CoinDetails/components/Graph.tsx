@@ -44,10 +44,11 @@ export default function Graph({ chartData }: GraphProps) {
           dataKey="timestamp"
           tickFormatter={(ts) => format(new Date(ts), "dd.MM")}
           stroke="var(--color-gray-500)"
+          
           dy={4}
           axisLine={false}
           tickLine={false}
-          fontSize={14}
+          fontSize={12}
         />
 
         <YAxis
@@ -56,7 +57,7 @@ export default function Graph({ chartData }: GraphProps) {
           orientation="right"
           stroke="var(--color-gray-500)"
           dx={8}
-          fontSize={14}
+          fontSize={12}
           axisLine={false}
           tickLine={false}
           mirror={true}

@@ -24,10 +24,11 @@ export const MainLayout = () => {
             ${isSidebarOpen ? "translate-y-0 md:w-72" : "-translate-y-full md:w-20"} md:static md:h-full md:top-0 md:flex md:flex-col md:translate-y-0  bg-foreground border-r border-r-gray-300 dark:border-r-gray-700 shadow-sm `}
       >
         <div className={`flex justify-between items-center gap-2 ${isSidebarOpen ? "md:flex-row" : "md:flex-col"}`}>
-          <div className="flex gap-2 items-center text-center">
+          <Link className="flex gap-2 items-center text-center" to={"/"}
+            search={{ page: 1 }}>
             <PieChartIcon className="size-10 text-blue-600" />
             <h3 className={`text-2xl font-bold ${isSidebarOpen ? "inline" : "hidden "}`}>CoinPulse</h3>
-          </div>
+          </Link>
           <IconMenu2 onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="dark:text-gray-400  text-gray-600" />
         </div>
 
@@ -78,10 +79,11 @@ export const MainLayout = () => {
       </aside>
 
       <header className="sticky top-0 left-0 right-0 md:hidden flex justify-between items-center p-4 shadow-sm bg-foreground">
-        <div className="flex gap-1 items-center text-center">
+        <Link className="flex gap-1 items-center text-center" to={"/"}
+          search={{ page: 1 }}>
           <PieChartIcon className="size-8 text-blue-600" />
           <h3 className={`text-xl  font-bold `}>CoinPulse</h3>
-        </div>
+        </Link>
         <IconMenu2 onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="dark:text-gray-400  text-gray-600" />
       </header>
 

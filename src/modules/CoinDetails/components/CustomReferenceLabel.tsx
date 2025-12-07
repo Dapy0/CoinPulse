@@ -46,27 +46,14 @@ export const CustomReferenceLabel: React.FC<CustomReferenceLabelProps> = ({
         y={y + dy}
         fill={color}
         textAnchor={textAnchor}
-        className="text-[10px] sm:text-xs md:text-sm font-bold tracking-wide transition-all duration-300"
-        stroke="#1e293b"
+        className="text-[9px] sm:text-xs md:text-sm font-bold tracking-wide transition-all duration-300 stroke-[3px] stroke-white dark:stroke-[#1e293b]"
         strokeWidth="3px"
         style={{ paintOrder: "stroke", pointerEvents: "none" }}
       >
         {title}: {formatNumber(value)}
       </text>
 
-      <text
-        x={cx}
-        y={y + dy}
-        fill={color}
-        textAnchor={textAnchor}
-        className="text-[10px] sm:text-xs md:text-sm font-semibold tracking-wide"
-        style={{ pointerEvents: "none" }}
-      >
-        <tspan opacity={0.7} fontWeight="normal">
-          {title}:{" "}
-        </tspan>
-        <tspan fontWeight="bold">{formatNumber(value)}</tspan>
-      </text>
+     
     </g>
   );
 };
