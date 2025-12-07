@@ -29,8 +29,8 @@ export default function CoinDetailBlock({ coinId }: { coinId: string }) {
 
       <CoinDetailGraph {...coin} />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        <CoinDetailWidget name="Market Cap" value={`$${formatNumber(coin.market_data?.market_cap?.usd || 0)}`} />
-        <CoinDetailWidget name="Volume (24h)" value={`$${formatNumber(coin.market_data?.total_volume?.usd || 0)}`} />
+        <CoinDetailWidget name="Market Cap" value={formatNumber(coin.market_data?.market_cap?.usd || 0)} />
+        <CoinDetailWidget name="Volume (24h)" value={formatNumber(coin.market_data?.total_volume?.usd || 0)} />
         <CoinDetailWidget
           name="Circulating Supply"
           value={`${formatNumber(coin.market_data?.circulating_supply || 0)} ${coin.symbol?.toUpperCase()}`}
