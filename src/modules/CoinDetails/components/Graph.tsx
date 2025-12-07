@@ -84,7 +84,7 @@ export default function Graph({ chartData }: GraphProps) {
           }}
           itemStyle={{ color: color }}
           labelFormatter={(ts) => format(new Date(ts), "MMM d, yyyy")}
-          formatter={(value: number) => [`$${formatNumber(value)}`, "Price"]}
+          formatter={(value: number) => [`${formatNumber(value)}`, "Price"]}
         />
         <Area type="linear" dataKey="price" stroke={color} strokeWidth={3} fillOpacity={1} fill="url(#colorPrice)" />
       </AreaChart>
